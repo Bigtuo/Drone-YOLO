@@ -9,8 +9,8 @@ from ultralytics import YOLO
 model = YOLO(model="yolov8s-p2-repvgg-sf.yaml")  # yolov8s+repvgg+sf
 
 
-model.load('yolov8s.pt')
+# model.load('yolov8s.pt')  # 论文未加载预训练权重
 # Use the model
-model.train(data="VisDrone.yaml", imgsz=640, epochs=110, workers=8, batch=8, cache=True, project='runs/train')
+model.train(data="VisDrone.yaml", imgsz=640, epochs=300, workers=8, batch=8, cache=True, project='runs/train')
 
 # path = model.export(format="onnx", dynamic=True)  # export the mode l to ONNX format
